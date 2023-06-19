@@ -23,7 +23,7 @@ Este es un bot propio, aclaro que no use bases de otros bots, lo puedes modifica
 ### Boxmine host:
 
 <div align="center">
-    <img src="[https://raw.githubusercontent.com/devicons/devicon/1119b9f84c0290e0f0b38982099a2bd027a48bf1/icons/nodejs/nodejs-original.svg](https://github.com/Yukyshiram/recursos_CDA/blob/main/boxmine.png?raw=true)https://github.com/Yukyshiram/recursos_CDA/blob/main/boxmine.png" title="Node.JS" alt="Node" width="150" height="150"/>
+    <img src="[https://github.com/Yukyshiram/recursos_CDA/blob/main/boxmine.png" title="Boxmine" alt="boxi" width="150" height="150"/>
 </div>
 
 - Pagina Oficial: https://boxmineworld.com
