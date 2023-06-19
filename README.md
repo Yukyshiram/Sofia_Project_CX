@@ -13,6 +13,8 @@ Este es un bot propio, aclaro que no use bases de otros bots, lo puedes modifica
 
 - Mi pagina web [CX Project](https://jesscx.boxmineworld.com/)
 
+- Si quieres agregarle mas comandos de solo texto, puedes buscar ***commands.json*** y agregar name + palabra y agregar text + lo que quieres que responda
+
 ---
 ### Ejecutar en localhost
 1. Tener descargado [node.js](https://nodejs.org/es/download)
