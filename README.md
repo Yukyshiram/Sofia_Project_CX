@@ -1,5 +1,7 @@
-# Sofia_Project
+# Sofia_Project Beta
 Este es un bot propio, aclaro que no use bases de otros bots, lo puedes modificar si gustas, ojito no te olvides de dar creditos, si tienes ideas me puedes mandar mensaje por discord: yukyshiram_cx
+
+- Lo dejo como aviso, el comando *mp3* y el *yt* no deben durar mas de 4 min o el bot de crasheara, luego tengo que resolver eso 
 
 ### About Sofia :
 
