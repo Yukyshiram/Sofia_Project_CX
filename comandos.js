@@ -33,7 +33,7 @@ async function comandos(message) {
         }
 
         try {
-            //await jsonCommands(message);
+            await jsonCommands(message);
             await sofia(message);
             await sticker(message);
             await infoGroup(message);
