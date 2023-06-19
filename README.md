@@ -1,7 +1,7 @@
 # Sofia_Project Beta
 Este es un bot propio, aclaro que no use bases de otros bots, lo puedes modificar si gustas, ojito no te olvides de dar creditos, si tienes ideas me puedes mandar mensaje por discord: yukyshiram_cx
 
-- Lo dejo como aviso, el comando *mp3* y el *yt* no deben durar mas de 4 min o el bot de crasheara, luego tengo que resolver eso 
+- La libreria tiende a soltar ciertos errores, asi que trate de optimizar todo esto al maximo aunque aun faltan varios detalles
 
 ### About Sofia :
 
@@ -14,7 +14,20 @@ Este es un bot propio, aclaro que no use bases de otros bots, lo puedes modifica
 - Mi pagina web [CX Project](https://jesscx.boxmineworld.com/)
 
 ---
+### Ejecutar en localhost
+1. Tener descargado [node.js](https://nodejs.org/es/download)
+2. Descargar el proyecto
+3. Abrir el proyecto desde su terminal/cmd
+> cd Sofia_Project
+4. ejecutar el siguiente comando para instalar todas las librerias
+> npm install
+5. Para finalizar solo debe poner 
+> npm start
+Escanear el Qr y listo!
 
+_Se le recomienda editar el index.js y poner el numero de telefono del usuario_
+
+---
 <div align="center">
     <h3>Desarrollado en puro:</h3>
     <img src="https://raw.githubusercontent.com/devicons/devicon/1119b9f84c0290e0f0b38982099a2bd027a48bf1/icons/nodejs/nodejs-original.svg" title="Node.JS" alt="Node" width="150" height="150"/>
@@ -33,3 +46,9 @@ Este es un bot propio, aclaro que no use bases de otros bots, lo puedes modifica
 - Discord: https://discord.gg/Rxydysgy
   
 - Para dudas sobre el bot con: 𝗔𝘆𝘂𝗱𝗮𝗻𝘁𝗲 | Sr. Courtesy
+
+---
+
+### Docker
+
+***Coming Soon***
