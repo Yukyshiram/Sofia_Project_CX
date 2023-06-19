@@ -9,6 +9,11 @@ async function YT(message) {
     let lowercase = message.body.toLowerCase();
 
     if (lowercase.startsWith('yt')) {
+
+        const mediaPath = './videos/';
+                if (!fs.existsSync(mediaPath)) {
+                    fs.mkdirSync(mediaPath)
+                }
         
         const words = message.body.split(' ');
         
