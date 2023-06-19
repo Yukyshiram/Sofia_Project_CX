@@ -32,7 +32,7 @@ sofi.on("qr", qr => {
 
 //si esta activo, enviar mensaje a los siguientes numeros
 const send_message = [
-    "5213321485996"
+    "52112345678910"
 ]
 
 //Ejecutar cliente
