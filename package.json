@@ -7,8 +7,18 @@
     "test": "node test.js",
     "start": "node index.js"
   },
-  "keywords": [],
+  "keywords": [ 
+    "Sofia_Project",
+    "Sofi",
+    "Whatsapp",
+    "whatsapp-web.js",
+    "puppeteer.js", 
+    "beta",
+    "bot"
+  ],
   "author": "Sr. Courtesy",
+  "homepage": "https://jesscx.boxmineworld.com/",
+  "repository": "https://github.com/Yukyshiram/Sofia_Project",
   "license": "ISC",
   "dependencies": {
     "akaneko": "^5.2.7",
