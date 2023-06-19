@@ -3,6 +3,8 @@ Este es un bot propio, aclaro que no use bases de otros bots, lo puedes modifica
 
 - La libreria tiende a soltar ciertos errores, asi que trate de optimizar todo esto al maximo aunque aun faltan varios detalles
 
+- los comandos que mas presentan problemas con la libreria es yt y mp3
+
 ### About Sofia :
 
 - El bot esta desarrollado en node.js totalmente
