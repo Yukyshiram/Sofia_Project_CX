@@ -1,0 +1,28 @@
+{
+  "name": "eris_bot",
+  "version": "1.0.0",
+  "description": "Bot diseñado para modulo lider y despues open source",
+  "main": "index.js",
+  "scripts": {
+    "test": "node test.js",
+    "start": "node index.js"
+  },
+  "keywords": [],
+  "author": "Sr. Courtesy",
+  "license": "ISC",
+  "dependencies": {
+    "akaneko": "^5.2.7",
+    "anime-character-random": "^1.0.14",
+    "chalk": "^4.1.2",
+    "ffmpeg": "^0.0.4",
+    "fs": "^0.0.1-security",
+    "hispamemes": "^1.0.7",
+    "mime-types": "^2.1.35",
+    "moment-timezone": "^0.5.43",
+    "puppeteer": "^20.7.2",
+    "qrcode-terminal": "^0.12.0",
+    "whatsapp-web.js": "^1.21.0",
+    "wikipedia": "^2.1.0",
+    "ytdl-core": "^4.11.4"
+  }
+}

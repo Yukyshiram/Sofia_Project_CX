@@ -1,0 +1,15 @@
+export const A = 'a';
+export const B = 's';
+export const C = 'd';
+export const D = 'f';
+export const E = 'g';
+export const F = 'h';
+export const G = 'j';
+export const H = 'k';
+export const I = 'l';
+export const J = 'ñ';
+export const K = 'p';
+export const M = 'o';
+export const N = 'i';
+export const Ñ = 'u';
+export const O = 'y';

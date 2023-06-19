@@ -1,0 +1,69 @@
+//en caso de que en localhost el comando glg tenga ciertos problemas borrar el codigo de google.js y agregar este
+//pd. este funcionara dependiendo tu conexion a internet
+
+const { MessageMedia } = require('whatsapp-web.js');
+const sofi = require('../../client');
+const puppeteer = require('puppeteer');
+const fs = require('fs');
+
+async function glg(message) {
+
+    let lowercase = message.body.toLowerCase();
+    const ubicacioncom = 'commands/functions/images/example.png';
+
+    if (lowercase.startsWith('glg')) {
+
+        const mediaPath = './commands/functions/images/';
+        if (!fs.existsSync(mediaPath)) {
+            fs.mkdirSync(mediaPath)
+        }
+
+        const words = message.body.split(' ');
+
+        if (words.length >= 2) {
+
+            message.reply('🪷*Sofia*🪷\n_Un momento por favor_\n\n   procesando...');
+
+            const busqueda = words.slice(1).join(' ');
+
+            console.log(`Buscando: ${busqueda} \n`);
+
+            async function searchOnGoogle() {
+                const browser = await puppeteer.launch({
+                    headless: 'new',
+                    slowMo: 100,
+                });
+
+                const page = await browser.newPage();
+
+                await page.setViewport({ width: 1080, height: 1920 });
+
+                await page.goto('https://www.google.com/')
+
+                await page.type('textarea[class="gLFyf"]', `${busqueda}`);
+
+                await page.click('input[class="gNO89b"]')
+
+                await page.screenshot({ path: ubicacioncom });
+
+                await console.log('Listo, enviando 🪷');
+
+                await browser.close();
+            }
+
+            await searchOnGoogle();
+
+            let media = MessageMedia.fromFilePath(`${ubicacioncom}`);
+
+            sofi.sendMessage(message.from, media, { caption: `🪷> Aqui estan los resultados de: ${busqueda}` });
+
+            await fs.unlinkSync(ubicacioncom)
+
+        } else {
+
+            message.reply('Este comando requiere al menos algo despues de *glg*');
+        }
+    }
+};
+
+module.exports = glg;

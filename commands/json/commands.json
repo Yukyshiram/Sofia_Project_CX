@@ -1,0 +1,27 @@
+[
+  {
+    "name": "hola",
+    "text": "Hola Soy *Sofia* Bot a tu servicio,\nyo me encargo de mostrar el menu y las ofertas de la semana al publico\n\nPara obtener el menu de la semana escriba\n*menu*\n\nPara obtener informacion de cuales son mis funciones y la sintaxis de comandos escriba\n*ayuda*",
+    "reaction": "👋🏼"
+  },
+  {
+    "name": "disculpa",
+    "text": "No e comprendido el comando, lo puedes repetir nuevamente\n\nRecuerda que todo debe de estar en minusculas y sin acentos"
+  },
+  {
+    "name": "gracias",
+    "text": "Denada!, tenga un buen dia.",
+    "reaction": "🫂"
+  },
+  {
+    "name": "ayuda",
+    "text": "-->*Ayuda*<--\n\nEste bot funciona sin prefijo, las acciones del bot son por palabras y contexto\n\nEjemplo:\n para hacer un _sticker_ debes mandar una imagen con la palabra sticker(no admite estar por separados)\n\n_Este es un bot beta asi que algunas de sus funciones aun presentan fallos_"
+  },
+  {
+    "name": "bigmenu",
+    "text": "Menu \n\nEste es el super menu de como usar los comandos y lo que hacen\n\n| 🪷Info:🪷\n| 🪷> info (acerca del bot)\n| 🪷> chats (numero de chats que tiene abierto el bot)\n| 🪷> groupinfo (muestra detalles del grupo)\n\n| 🪷Funciones🪷 \n|--------\n| 🪷> sticker (mandas una imagen con la palabra sticker)\n| 🪷> yt + enlace (manda este comando con un link de youtube, no acepta otras plataformas y no puede durar mas de 4 min)\n| 🪷> mp3 + enlace (manda este comando con un link de youtube, no acepta otras plataformas y no puede durar mas de 4 min)\n| 🪷> meme (lit manda meme y te mandara un meme)"
+  },{
+    "name": "bot",
+    "text": "🪷Yo soy Sofia Bot🪷\nUn gusto conocerte :3\nPara ver mas funciones escribe *menu*"
+  }
+]
