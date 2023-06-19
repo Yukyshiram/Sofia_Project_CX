@@ -11,15 +11,14 @@ async function YT(message) {
     if (lowercase.startsWith('yt')) {
 
         const mediaPath = './videos/';
-                if (!fs.existsSync(mediaPath)) {
-                    fs.mkdirSync(mediaPath)
-                }
-        
+        if (!fs.existsSync(mediaPath)) {
+            fs.mkdirSync(mediaPath)
+        }
+
         const words = message.body.split(' ');
-        
+
         if (words.length >= 2) {
 
-            message.reply('🪷*Beta*🪷\n_Asegurese que el video no dure mas de 4 minutos_\n\n procesando...');
 
             const videoURL = words.slice(1).join(' ');
 
@@ -34,30 +33,38 @@ async function YT(message) {
 
                 //categoria del video
                 const categoria = info.videoDetails.category;
+                const duracion = info.videoDetails.lengthSeconds
 
-                const title = resultado.split(" ")[0].toLowerCase();
+                if (duracion <= '255') {
 
-                sofi.sendMessage(message.from, `🪷*Titulo*🪷\n${resultado}\n\n🪷*Descripcion*🪷\n${descripcion}\n\n🪷*Categoria*🪷\n${categoria}`);
+                    message.reply('🪷*Sofi*🪷\n\n_procesando..._');
+                    const title = resultado.split(" ")[0].toLowerCase();
 
-                // Crea el archivo de salida con el título del video como nombre
-                const outputFilePath = `videos/${title}.mp4`;
-                const outputStream = fs.createWriteStream(outputFilePath);
+                    sofi.sendMessage(message.from, `🪷*Titulo*🪷\n${resultado}\n\n🪷*Descripcion*🪷\n${descripcion}\n\n🪷*Categoria*🪷\n${categoria}`);
 
-                // Descarga el video y guarda en el archivo
-                const videoStream = ytdl(videoURL, { quality: 'highest', filter: 'audioandvideo', format: 'mp4' });
-                videoStream.pipe(outputStream);
+                    // Crea el archivo de salida con el título del video como nombre
+                    const outputFilePath = `videos/${title}.mp4`;
+                    const outputStream = fs.createWriteStream(outputFilePath);
 
-                outputStream.on('finish', async () => {
-                    console.log(`El archivo ${outputFilePath} se ha guardado correctamente, procediendo a enviar.\n`);
+                    // Descarga el video y guarda en el archivo
+                    const videoStream = ytdl(videoURL, { quality: 'highest', filter: 'audioandvideo', format: 'mp4' });
+                    videoStream.pipe(outputStream);
 
-                    const file = outputFilePath;
-                    const videoBuffer = fs.readFileSync(file, { encoding: 'base64' });
-                    const media = new MessageMedia('video/mp4', videoBuffer, `${title}.mp4`);
+                    outputStream.on('finish', async () => {
+                        console.log(`El archivo ${outputFilePath} se ha guardado correctamente, procediendo a enviar.\n`);
 
-                    await chat.sendMessage(media, { sendMediaAsDocument: true });
+                        const file = outputFilePath;
+                        const videoBuffer = fs.readFileSync(file, { encoding: 'base64' });
+                        const media = new MessageMedia('video/mp4', videoBuffer, `${title}.mp4`);
 
-                    await fs.unlinkSync(outputFilePath);
-                });
+                        await chat.sendMessage(media, { sendMediaAsDocument: true });
+
+                        await fs.unlinkSync(outputFilePath);
+                    });
+                } else {
+                    console.log('yt.js dice: duracion + 4 mins');
+                    message.react('❌');
+                }
             });
         } else {
             message.reply('El comando yt requiere al menos un link despues de la palabra de *yt*');
