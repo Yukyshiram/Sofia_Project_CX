@@ -3,7 +3,9 @@ Este es un bot propio, aclaro que no use bases de otros bots, lo puedes modifica
 
 - La libreria tiende a soltar ciertos errores, asi que trate de optimizar todo esto al maximo aunque aun faltan varios detalles
 
-- los comandos que mas presentan problemas con la libreria es yt y mp3
+- los comandos (beta) tienden a presentar algunas fallas, se esta buscando solucion
+
+- Esto no tiene nada que ver con ***@adiwajshing/baileys***
 
 ### About Sofia :
 
