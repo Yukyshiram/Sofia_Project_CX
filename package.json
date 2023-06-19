@@ -1,7 +1,7 @@
 {
-  "name": "eris_bot",
+  "name": "Sofia_Project",
   "version": "1.0.0",
-  "description": "Bot diseñado para modulo lider y despues open source",
+  "description": "Valio la pena, al fin donde aplicar los conocimientos, no olvides dar creditos",
   "main": "index.js",
   "scripts": {
     "test": "node test.js",
