@@ -1,4 +1,4 @@
-# Sofia_Project Beta
+# Sofía Project Bot Beta
 Este es un bot propio, aclaro que no use bases de otros bots, lo puedes modificar si gustas, ojito no te olvides de dar creditos, si tienes ideas me puedes mandar mensaje por discord: yukyshiram_cx
 
 - La libreria tiende a soltar ciertos errores, asi que trate de optimizar todo esto al maximo aunque aun faltan varios detalles
