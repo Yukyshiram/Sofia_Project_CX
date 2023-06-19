@@ -23,7 +23,7 @@ Este es un bot propio, aclaro que no use bases de otros bots, lo puedes modifica
 > npm install
 5. Para finalizar solo debe poner 
 > npm start
-Escanear el Qr y listo!
+6. Escanear el Qr y listo!
 
 _Se le recomienda editar el index.js y poner el numero de telefono del usuario_
 
