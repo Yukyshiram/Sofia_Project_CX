@@ -10,6 +10,11 @@ async function mp3(message) {
 
     if (lowercase.startsWith('mp3')) {
 
+        const mediaPath = './audios/';
+                if (!fs.existsSync(mediaPath)) {
+                    fs.mkdirSync(mediaPath)
+                }
+
         const words = message.body.split(' ');
         
         if (words.length >= 2) {
