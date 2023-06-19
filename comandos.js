@@ -53,7 +53,7 @@ async function comandos(message) {
             await everyone(message);
         } catch (error) {
             console.log('hubo un error con algun comando de comandos.js, esperemos no vuelva a pasar');
-            console.log('en caso de ser el comando glg, esperar una solucion');
+            console.log('en caso de ser el comando glg, borre la carpeta node_modules y vuelva a iniciar');
             message.react('❌');
         }
 
