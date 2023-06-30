@@ -12,7 +12,7 @@ async function chatgtp(message) {
                 consola.start(`Usuario a gtp: ${peticion}`);
 
                 const configuration = new Configuration({
-                    apiKey: "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",//aqui debo de ser muy claro,si la api esta al limite aunque sea nueva soltara un error muy largo en consola, yo recomiendo crear una nueva cuenta y luego poner la api
+                    apiKey: "",//aqui debo de ser muy claro,si la api esta al limite aunque sea nueva soltara un error muy largo en consola, yo recomiendo crear una nueva cuenta y luego poner la api
                 });
 
                 const openai = new OpenAIApi(configuration);

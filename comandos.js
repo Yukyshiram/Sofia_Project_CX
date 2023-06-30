@@ -1,8 +1,10 @@
 const sofi = require('./client');
 
 async function comandos(message) {
-    
+    //json
     const jsonCommands = require('./commands/json/jsonCommands');
+
+    //functions
     const menu = require('./commands/functions/menu');
     const sofia = require('./commands/functions/sofia');
     const sticker = require('./commands/functions/sticker');
@@ -23,12 +25,18 @@ async function comandos(message) {
     const everyone = require('./commands/functions/everyone');
     const chatgtp = require('./commands/functions/chatgtp');
     const dallegpt = require('./commands/functions/dallegpt');
+    const helpchat = require('./commands/functions/helpchat');
+
+    //testing
     const status = require('./commands/test/status')
 
     sofi.on('message', async (message) => {
 
         try {
+            //json
             await jsonCommands(message);
+
+            //functions
             await sofia(message);
             await sticker(message);
             await infoGroup(message);
@@ -49,6 +57,9 @@ async function comandos(message) {
             await chatgtp(message);
             await dallegpt(message);
             await menu(message);
+            await helpchat(message);
+
+            //testing
             await status(message);
 
         } catch (error) {
