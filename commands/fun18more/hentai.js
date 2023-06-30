@@ -6,9 +6,10 @@ async function hentai(message) {
     try {
         let lowercase = message.body.toLowerCase();
 
-        const imgmore = await akaneko.nsfw.hentai();
-
         if (lowercase === 'hentai') {
+
+            const imgmore = await akaneko.nsfw.hentai();
+            
             try {
                 const media = await MessageMedia.fromUrl(imgmore);
 

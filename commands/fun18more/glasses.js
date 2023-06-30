@@ -6,9 +6,10 @@ async function glasses(message) {
     try {
         let lowercase = message.body.toLowerCase();
 
-        const imgmore = await akaneko.nsfw.glasses();
-
         if (lowercase === 'glasses') {
+
+            const imgmore = await akaneko.nsfw.glasses();
+            
             try {
                 const media = await MessageMedia.fromUrl(imgmore);
 

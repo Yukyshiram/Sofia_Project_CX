@@ -6,9 +6,10 @@ async function foxgirl(message) {
     try {
         let lowercase = message.body.toLowerCase();
 
-        const imgmore = await akaneko.nsfw.foxgirl();
-
         if (lowercase === 'foxgirl') {
+
+            const imgmore = await akaneko.nsfw.foxgirl();
+            
             try {
                 const media = await MessageMedia.fromUrl(imgmore);
 

@@ -1,8 +1,9 @@
 const sofi = require('./client');
-const { MessageMedia } = require('whatsapp-web.js');
 
 async function comandos(message) {
+    
     const jsonCommands = require('./commands/json/jsonCommands');
+    const menu = require('./commands/functions/menu');
     const sofia = require('./commands/functions/sofia');
     const sticker = require('./commands/functions/sticker');
     const infoGroup = require('./commands/functions/infoGroup');
@@ -20,17 +21,11 @@ async function comandos(message) {
     const host = require('./commands/functions/host');
     const dev = require('./commands/functions/desarrollador');
     const everyone = require('./commands/functions/everyone');
+    const chatgtp = require('./commands/functions/chatgtp');
+    const dallegpt = require('./commands/functions/dallegpt');
+    const status = require('./commands/test/status')
 
     sofi.on('message', async (message) => {
-
-
-        const url = 'https://github.com/Yukyshiram/recursos_CDA/blob/main/morada.jpg?raw=true';
-        const media = await MessageMedia.fromUrl(url);
-
-        let lowercase = message.body.toLowerCase();
-        if (lowercase === 'menu') {
-            sofi.sendMessage(message.from, media, { caption: `*🪷Menu🪷* \n\nEste es un menu super facil de usar\n\n🪷---------\n| 🪷Info:🪷\n| 🪷> info\n| 🪷> chats\n| 🪷> groupinfo\n| 🪷> host (mes gratis)\n| 🪷> dev\n| 🪷> everyone\n|\n| 🪷Funciones🪷 \n|--------\n| 🪷> sticker (con imagen)\n| 🪷> yt + enlace (beta)\n| 🪷> mp3 + enlace (beta)\n| 🪷> randomanime\n| 🪷> glg + busqueda (beta)\n| 🪷> neko\n| 🪷> walld\n| 🪷> wallp\n| 🪷> wiki + busqueda\n| 🪷> meme\n🪷---------\n\n*bigmenu* para ver uso de los comandos` })
-        }
 
         try {
             await jsonCommands(message);
@@ -51,13 +46,16 @@ async function comandos(message) {
             await host(message);
             await dev(message);
             await everyone(message);
+            await chatgtp(message);
+            await dallegpt(message);
+            await menu(message);
+            await status(message);
+
         } catch (error) {
             console.log('hubo un error con algun comando de comandos.js, esperemos no vuelva a pasar');
-            console.log('en caso de ser el comando glg, borre la carpeta node_modules y vuelva a iniciar');
-            message.react('❌');
+            //console.log(error);
+            //message.react('❌');
         }
-
-
     });
 }
 

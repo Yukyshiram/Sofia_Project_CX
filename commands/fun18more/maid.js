@@ -6,9 +6,10 @@ async function maid(message) {
     try {
         let lowercase = message.body.toLowerCase();
 
-        const imgmore = await akaneko.nsfw.maid();
-
         if (lowercase === 'maid') {
+
+            const imgmore = await akaneko.nsfw.maid();
+            
             try {
                 const media = await MessageMedia.fromUrl(imgmore);
 

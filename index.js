@@ -4,7 +4,7 @@ const moment = require('moment-timezone');
 const comandos = require('./comandos');
 const comandos18 = require('./comandos18');
 const consola = require('./log/log');
-const status = require('./commands/test/status');
+const status = require('./commands/test/statusinicio');
 
 //estilos de texto en consola
 const red = chalk.bold.red;
@@ -32,11 +32,13 @@ sofi.on("qr", qr => {
 
 //si esta activo, enviar mensaje a los siguientes numeros
 const send_message = [
-    "52112345678910"
+    "5213321485996"
 ]
 
 //Ejecutar cliente
 sofi.on("ready", async() => {
+
+    status();
 
     consola();
 

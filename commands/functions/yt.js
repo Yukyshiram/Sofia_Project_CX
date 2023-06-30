@@ -19,7 +19,6 @@ async function YT(message) {
 
         if (words.length >= 2) {
 
-
             const videoURL = words.slice(1).join(' ');
 
             console.log(`Analizando url: ${videoURL} \n`);
@@ -35,7 +34,7 @@ async function YT(message) {
                 const categoria = info.videoDetails.category;
                 const duracion = info.videoDetails.lengthSeconds
 
-                if (duracion <= '255') {
+                if (duracion <= '240') {
 
                     message.reply('🪷*Sofi*🪷\n\n_procesando..._');
                     const title = resultado.split(" ")[0].toLowerCase();

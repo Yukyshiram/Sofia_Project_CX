@@ -6,9 +6,10 @@ async function nekox(message) {
     try {
         let lowercase = message.body.toLowerCase();
 
-        const imgmore = await akaneko.nsfw.ass();
-
         if (lowercase === 'ass') {
+
+            const imgmore = await akaneko.nsfw.ass();
+            
             try {
                 const media = await MessageMedia.fromUrl(imgmore);
 

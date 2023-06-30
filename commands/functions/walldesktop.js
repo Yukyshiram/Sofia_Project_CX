@@ -6,9 +6,10 @@ async function walld(message) {
     try {
         let lowercase = message.body.toLowerCase();
 
-        const imgmore = await akaneko.wallpapers();
-
         if (lowercase === 'walld') {
+
+            const imgmore = await akaneko.wallpapers();
+            
             try {
                 const media = await MessageMedia.fromUrl(imgmore);
 

@@ -6,10 +6,10 @@ async function neko(message) {
     try {
         let lowercase = message.body.toLowerCase();
 
-        const img = await akaneko.neko()
-
         try {
             if (lowercase === 'neko') {
+
+                const img = await akaneko.neko()
 
                 const media = await MessageMedia.fromUrl(img);
     

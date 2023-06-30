@@ -6,9 +6,10 @@ async function masturbation(message) {
     try {
         let lowercase = message.body.toLowerCase();
 
-        const imgmore = await akaneko.nsfw.masturbation();
-
         if (lowercase === 'masturbation') {
+
+            const imgmore = await akaneko.nsfw.masturbation();
+            
             try {
                 const media = await MessageMedia.fromUrl(imgmore);
 

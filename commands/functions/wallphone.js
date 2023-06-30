@@ -6,9 +6,10 @@ async function wallp(message) {
     try {
         let lowercase = message.body.toLowerCase();
 
-        const imgmore = await akaneko.mobileWallpapers();
-
         if (lowercase === 'wallp') {
+
+            const imgmore = await akaneko.mobileWallpapers();
+
             try {
                 const media = await MessageMedia.fromUrl(imgmore);
 
@@ -21,6 +22,7 @@ async function wallp(message) {
         
     } catch (error) {
         console.log('hubo un error en wallp.js');
+        //console.log(error);
     }
 };
 

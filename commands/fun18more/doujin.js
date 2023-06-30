@@ -6,9 +6,10 @@ async function doujin(message) {
     try {
         let lowercase = message.body.toLowerCase();
 
-        const imgmore = await akaneko.nsfw.doujin();
-
         if (lowercase === 'doujin') {
+
+            const imgmore = await akaneko.nsfw.doujin();
+            
             try {
                 const media = await MessageMedia.fromUrl(imgmore);
 

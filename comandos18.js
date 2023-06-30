@@ -1,8 +1,8 @@
 const sofi = require('./client');
-const { MessageMedia } = require('whatsapp-web.js');
 
 async function comandos18(message) {
 
+    const menu18 = require('./commands/fun18more/menu18');
     const ass = require('./commands/fun18more/ass');
     const bdsm = require('./commands/fun18more/bdsm');
     const cum = require('./commands/fun18more/cum');
@@ -19,14 +19,7 @@ async function comandos18(message) {
     try {
         sofi.on('message', async (message) => {
 
-            const url = 'https://github.com/Yukyshiram/recursos_CDA/blob/main/moradaflor.jpg?raw=true';
-            const media = await MessageMedia.fromUrl(url);
-
-            let lowercase = message.body.toLowerCase();
-            if (lowercase === 'menu18') {
-                sofi.sendMessage(message.from, media, { caption: 'Dios no entiendo porque le meti esto...\n\n🕵🏼‍♂️> ass \n🕵🏼‍♂️> bdsm \n🕵🏼‍♂️> cum \n🕵🏼‍♂️> doujin \n🕵🏼‍♂️> foxgirl \n🕵🏼‍♂️> glasses \n🕵🏼‍♂️> hentai \n🕵🏼‍♂️> masturbation \n🕵🏼‍♂️> maid \n🕵🏼‍♂️> pussy \n🕵🏼‍♂️> succubus \n🕵🏼‍♂️> tentacles'})
-            }
-
+            await menu18(message);
             await ass(message);
             await bdsm(message);
             await cum(message);

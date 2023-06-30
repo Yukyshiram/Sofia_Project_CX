@@ -6,9 +6,10 @@ async function cum(message) {
     try {
         let lowercase = message.body.toLowerCase();
 
-        const imgmore = await akaneko.nsfw.cum();
-
         if (lowercase === 'cum') {
+
+            const imgmore = await akaneko.nsfw.cum();
+            
             try {
                 const media = await MessageMedia.fromUrl(imgmore);
 

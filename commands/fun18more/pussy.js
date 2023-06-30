@@ -6,9 +6,10 @@ async function pussy(message) {
     try {
         let lowercase = message.body.toLowerCase();
 
-        const imgmore = await akaneko.nsfw.pussy();
-
         if (lowercase === 'pussy') {
+
+            const imgmore = await akaneko.nsfw.pussy();
+            
             try {
                 const media = await MessageMedia.fromUrl(imgmore);
 

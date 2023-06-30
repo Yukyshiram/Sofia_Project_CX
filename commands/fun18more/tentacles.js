@@ -6,9 +6,10 @@ async function tentacles(message) {
     try {
         let lowercase = message.body.toLowerCase();
 
-        const imgmore = await akaneko.nsfw.tentacles();
-
         if (lowercase === 'tentacles') {
+
+            const imgmore = await akaneko.nsfw.tentacles();
+            
             try {
                 const media = await MessageMedia.fromUrl(imgmore);
 

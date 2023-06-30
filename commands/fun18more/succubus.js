@@ -6,9 +6,10 @@ async function succubus(message) {
     try {
         let lowercase = message.body.toLowerCase();
 
-        const imgmore = await akaneko.nsfw.succubus();
-
         if (lowercase === 'succubus') {
+
+            const imgmore = await akaneko.nsfw.succubus();
+            
             try {
                 const media = await MessageMedia.fromUrl(imgmore);
 

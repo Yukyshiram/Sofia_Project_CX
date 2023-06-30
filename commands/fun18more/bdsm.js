@@ -6,9 +6,10 @@ async function bdsm(message) {
     try {
         let lowercase = message.body.toLowerCase();
 
-        const imgmore = await akaneko.nsfw.bdsm();
-
         if (lowercase === 'bdsm') {
+
+            const imgmore = await akaneko.nsfw.bdsm();
+            
             try {
                 const media = await MessageMedia.fromUrl(imgmore);
 
