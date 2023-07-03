@@ -1,6 +1,7 @@
 const akaneko = require('akaneko');
 const { MessageMedia } = require('whatsapp-web.js');
 const sofi = require('../../client');
+const cx = require("consola");
 
 async function masturbation(message) {
     try {
@@ -15,13 +16,13 @@ async function masturbation(message) {
 
                 sofi.sendMessage(message.from, media, { caption: `🫥> masturbation` });
             } catch (error) {
-                console.log('❌ debe ser el link de masturbation');
+                cx.warn('❌ debe ser el link de masturbation');
                 message.react('✖️');
             }
         }
         
     } catch (error) {
-        console.log('hubo un error en masturbation.js');
+        cx.error('hubo un error en masturbation.js');
     }
 };
 

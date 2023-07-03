@@ -1,5 +1,6 @@
 const { MessageMedia } = require('whatsapp-web.js');
 const hispamemes = require("hispamemes");
+const cx = require("consola");
 
 async function meme(message) {
 
@@ -15,7 +16,7 @@ async function meme(message) {
         }
 
     } catch (error) {
-        console.log('la libreria no arrojo un link valido');
+        cx.warn('la libreria no arrojo un link valido');
         message.reply('ocurrio un error vuelva a intentar 🪷');
     }
 }

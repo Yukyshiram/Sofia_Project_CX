@@ -1,4 +1,5 @@
 const sofi = require('./client');
+const cx = require("consola");
 
 async function comandos18(message) {
 
@@ -35,7 +36,7 @@ async function comandos18(message) {
 
         })
     } catch (error) {
-        console.log('hubo un error con algun comando de comandos18.js, esperemos no vuelva a pasar');
+        cx.error('hubo un error con algun comando de comandos18.js, esperemos no vuelva a pasar');
     }
 
 }

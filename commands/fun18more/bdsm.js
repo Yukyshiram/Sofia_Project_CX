@@ -1,6 +1,7 @@
 const akaneko = require('akaneko');
 const { MessageMedia } = require('whatsapp-web.js');
 const sofi = require('../../client');
+const cx = require("consola");
 
 async function bdsm(message) {
     try {
@@ -15,13 +16,13 @@ async function bdsm(message) {
 
                 sofi.sendMessage(message.from, media, { caption: `🫥> bdsm` });
             } catch (error) {
-                console.log('❌ debe ser el link de bdsm');
+                cx.warn('❌ debe ser el link de bdsm');
                 message.react('✖️');
             }
         }
         
     } catch (error) {
-        console.log('hubo un error en bdsm.js');
+        cx.error('hubo un error en bdsm.js');
     }
 };
 

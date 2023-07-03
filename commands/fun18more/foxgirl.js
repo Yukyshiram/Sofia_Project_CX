@@ -1,6 +1,7 @@
 const akaneko = require('akaneko');
 const { MessageMedia } = require('whatsapp-web.js');
 const sofi = require('../../client');
+const cx = require("consola");
 
 async function foxgirl(message) {
     try {
@@ -15,13 +16,13 @@ async function foxgirl(message) {
 
                 sofi.sendMessage(message.from, media, { caption: `🫥> foxgirl` });
             } catch (error) {
-                console.log('❌ debe ser el link de foxgirl');
+                cx.warn('❌ debe ser el link de foxgirl');
                 message.react('✖️');
             }
         }
         
     } catch (error) {
-        console.log('hubo un error en foxgirl.js');
+        cx.error('hubo un error en foxgirl.js');
     }
 };
 

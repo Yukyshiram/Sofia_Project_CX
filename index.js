@@ -1,10 +1,11 @@
 const qrcode = require('qrcode-terminal');
 const chalk = require('chalk');
+const cx = require("consola");
 const moment = require('moment-timezone');
 const comandos = require('./comandos');
 const comandos18 = require('./comandos18');
-const consola = require('./log/log');
-const status = require('./commands/test/statusinicio');
+const consol = require('./log/log');
+const status = require('./commands/presencia/statusinicio');
 
 //estilos de texto en consola
 const red = chalk.bold.red;
@@ -19,7 +20,7 @@ const sofi = require('./client');
 // Guarda valores de sesión en el archivo después de una autenticación exitosa
 sofi.on('authenticated', (session) => {
     console.clear()
-    console.log(red(`El bot se a iniciado exitosamente! ${hour}\n`))
+    cx.success(red(`El bot se a iniciado exitosamente! ${hour}\n`))
 });
 
 //iniciar cliente
@@ -40,7 +41,7 @@ sofi.on("ready", async() => {
 
     status();
 
-    consola();
+    consol();
 
     await send_message.map(value => {
         const chatId = value + "@c.us"

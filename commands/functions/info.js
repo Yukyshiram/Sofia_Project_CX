@@ -1,5 +1,6 @@
 const sofi = require("../../client");
 const { MessageMedia } = require('whatsapp-web.js');
+const cx = require("consola");
 
 async function info(message) {
 
@@ -15,15 +16,15 @@ async function info(message) {
                 caption: `
 🪷*Sobre mi*🪷
 🪷Yo soy: ${info.pushname} 
-🪷Mi numero: ${info.me.user}
+🪷Mi numero: wa.me/+${info.me.user}
 🪷Platforma: ${info.platform} 
-Soy un bot modular, 
+Soy un bot modular, no prefix, 
 desarrollado por: 
 Im_JVallejo(Sr. Courtesy)
         `});
         }
     } catch (error) {
-        console.log('Hay un error en info.js');
+        cx.warn('Hay un error en info.js');
     }
 }
 

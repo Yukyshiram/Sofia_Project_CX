@@ -1,6 +1,7 @@
 const akaneko = require('akaneko');
 const { MessageMedia } = require('whatsapp-web.js');
 const sofi = require('../../client');
+const cx = require("consola");
 
 async function nekox(message) {
     try {
@@ -15,13 +16,13 @@ async function nekox(message) {
 
                 sofi.sendMessage(message.from, media, { caption: `🫥> ass` });
             } catch (error) {
-                console.log('❌ debe ser el link de ass');
+                cx.warn('❌ debe ser el link de ass');
                 message.react('✖️');
             }
         }
         
     } catch (error) {
-        console.log('hubo un error en nekox.js');
+        cx.error('hubo un error en ass.js');
     }
 };
 

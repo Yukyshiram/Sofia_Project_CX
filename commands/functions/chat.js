@@ -1,4 +1,5 @@
 const sofi = require("../../client");
+const cx = require("consola");
 
 async function chats(message) {
 
@@ -6,10 +7,10 @@ async function chats(message) {
     try {
         if (lowercase === 'chats') {
             const chats = await sofi.getChats();
-            sofi.sendMessage(message.from, `El bot tiene ${chats.length} chats abiertos.`);
+            sofi.sendMessage(message.from, `🪷> El bot tiene ${chats.length} chats abiertos.`);
         }
     } catch (error) {
-        console.log('Hay un error en chat.js');
+        cx.warn('Hay un error en chat.js');
     }
 }
 

@@ -1,6 +1,7 @@
 const akaneko = require('akaneko');
 const { MessageMedia } = require('whatsapp-web.js');
 const sofi = require('../../client');
+const cx = require("consola");
 
 async function tentacles(message) {
     try {
@@ -15,13 +16,13 @@ async function tentacles(message) {
 
                 sofi.sendMessage(message.from, media, { caption: `🫥> tentacles` });
             } catch (error) {
-                console.log('❌ debe ser el link de tentacles');
+                cx.warn('❌ debe ser el link de tentacles');
                 message.react('✖️');
             }
         }
         
     } catch (error) {
-        console.log('hubo un error en tentacles.js');
+        cx.warn('hubo un error en tentacles.js');
     }
 };
 

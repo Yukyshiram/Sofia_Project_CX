@@ -1,6 +1,7 @@
 const randomChar = require('anime-character-random');
 const { MessageMedia } = require('whatsapp-web.js');
 const sofi = require('../../client');
+const cx = require("consola");
 
 async function animerandom(message) {
     try {
@@ -9,11 +10,6 @@ async function animerandom(message) {
         if (lowercase === 'randomanime') {
             try {
                 const haber = await randomChar.GetChar();
-
-                // console.log(await haber.AnimeName);
-                // console.log(await haber.CharacterName);
-                // console.log(await haber.CharacterImage);
-                // console.log(await haber.CharacterJapaneseName);
 
                 const animename = haber.AnimeName;
                 const name = haber.CharacterName;
@@ -24,13 +20,13 @@ async function animerandom(message) {
 
                 sofi.sendMessage(message.from, media, { caption: `🪷*Personaje Random*🪷\n\n🪷*Anime*🪷\n${animename}\n\n🪷*Personaje*🪷\n${name}\n\n🪷*Jap*🪷\n${japaname}` });
             } catch (error) {
-                console.log('❌ debe ser el link de animerandom')
+                cx.warn('❌ debe ser el link de animerandom')
                 message.react('✖️');
             }
         }
 
     } catch (error) {
-        console.log('hubo un error en animerandom.js');
+        cx.error('hubo un error en animerandom.js');
     }
 };
 

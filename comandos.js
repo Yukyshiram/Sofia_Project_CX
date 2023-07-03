@@ -1,4 +1,5 @@
 const sofi = require('./client');
+const cx = require("consola");
 
 async function comandos(message) {
     //json
@@ -27,6 +28,9 @@ async function comandos(message) {
     const dallegpt = require('./commands/functions/dallegpt');
     const helpchat = require('./commands/functions/helpchat');
 
+    //math functions
+    const randomNum100 = require('./commands/math/randomNum100');
+
     //testing
     const status = require('./commands/test/status')
 
@@ -34,9 +38,10 @@ async function comandos(message) {
 
         try {
             //json
-            await jsonCommands(message);
+            //await jsonCommands(message);
 
             //functions
+            await menu(message);
             await sofia(message);
             await sticker(message);
             await infoGroup(message);
@@ -56,14 +61,16 @@ async function comandos(message) {
             await everyone(message);
             await chatgtp(message);
             await dallegpt(message);
-            await menu(message);
             await helpchat(message);
+
+            //math
+            await randomNum100(message);
 
             //testing
             await status(message);
 
         } catch (error) {
-            console.log('hubo un error con algun comando de comandos.js, esperemos no vuelva a pasar');
+            cx.error('hubo un error con algun comando de comandos.js, esperemos no vuelva a pasar');
             //console.log(error);
             //message.react('❌');
         }

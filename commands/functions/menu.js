@@ -1,5 +1,6 @@
 const sofi = require("../../client");
 const { MessageMedia } = require('whatsapp-web.js');
+const cx = require("consola");
 
 async function menu(message) {
 
@@ -8,14 +9,58 @@ async function menu(message) {
     const media = MessageMedia.fromFilePath('./img/morada.jpg');
 
     try {
-        if (lowercase === '.menu') {
+        if (lowercase === '.menu' || lowercase === '.menú') {
 
             sofi.sendMessage(message.from, media, {
-                caption: `*🪷Menu🪷* \n\nEste es un menu super facil de usar\n\n🪷---------\n| 🪷Info:🪷\n| 🪷> info\n| 🪷> chats\n| 🪷> groupinfo\n| 🪷> host (mes gratis)\n| 🪷> dev\n| 🪷> everyone\n|\n| 🪷Funciones🪷 \n|--------\n| 🪷> sticker (con imagen)\n| 🪷> yt + enlace\n| 🪷> mp3 + enlace\n| 🪷> randomanime\n| 🪷> neko\n| 🪷> walld\n| 🪷> wallp\n| 🪷> wiki + busqueda\n| 🪷> meme\n| 🪷> everyone\n|\n| 🪷Chat gtp y Dall-e🪷\n| _Estos no funcionaran sin su api_\n| Ayuda para esto: *helpchat* \n| (esto es para usar chatgtp) \n| 🪷> sofi + texto \n| (esto es para usar a Dall-e)\n| 🪷> eris + texto\n🪷--------- \nDall-e: generador de imagenes\n*bigmenu* para ver uso de los comandos`
+                caption: `*🪷Menu🪷*
+                
+Este es un menu super facil de usar
+                
+🪷---------------->>
+| 🪷Info:🪷
+|
+| 🪷> info
+| 🪷> chats
+| 🪷> groupinfo
+| 🪷> host (mes gratis)
+| 🪷> dev
+| 🪷> everyone
+|--------
+| 🪷Funciones🪷 
+|
+| 🪷> sticker (con imagen)
+| 🪷> yt + enlace
+| 🪷> mp3 + enlace
+| 🪷> randomanime
+| 🪷> neko
+| 🪷> walld
+| 🪷> wallp
+| 🪷> wiki + busqueda
+| 🪷> meme
+| 🪷> everyone
+|--------
+| 🪷Math functions:🪷
+|
+| 🪷> random100
+|-------- 
+|
+|🪷Chat gtp y Dall-e🪷
+| _Estos no funcionaran sin su api_
+| Ayuda para esto: *helpchat* 
+| (esto es para usar chatgtp) 
+|
+| 🪷> sofi + texto 
+| (esto es para usar a Dall-e)
+| 🪷> eris + texto
+🪷---------------->> 
+                
+Dall-e: generador de imagenes
+*bigmenu* para ver uso de los comandos
+                `
             })
         }
     } catch (error) {
-        console.log('Hay un error en menu.js');
+        cx.warn('Hay un error en menu.js');
     }
 }
 

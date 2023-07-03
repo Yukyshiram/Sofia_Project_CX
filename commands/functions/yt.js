@@ -2,6 +2,7 @@ const ytdl = require('ytdl-core');
 const fs = require('fs');
 const { MessageMedia } = require('whatsapp-web.js');
 const sofi = require('../../client');
+const cx = require("consola");
 
 async function YT(message) {
 
@@ -21,7 +22,7 @@ async function YT(message) {
 
             const videoURL = words.slice(1).join(' ');
 
-            console.log(`Analizando url: ${videoURL} \n`);
+            cx.start(`Analizando url: ${videoURL} \n`);
 
             ytdl.getInfo(videoURL).then(info => {
                 // Obtiene el título del video
@@ -50,7 +51,7 @@ async function YT(message) {
                     videoStream.pipe(outputStream);
 
                     outputStream.on('finish', async () => {
-                        console.log(`El archivo ${outputFilePath} se ha guardado correctamente, procediendo a enviar.\n`);
+                        cx.success(`El archivo ${outputFilePath} se ha guardado correctamente, procediendo a enviar.\n`);
 
                         const file = outputFilePath;
                         const videoBuffer = fs.readFileSync(file, { encoding: 'base64' });
@@ -61,7 +62,7 @@ async function YT(message) {
                         await fs.unlinkSync(outputFilePath);
                     });
                 } else {
-                    console.log('yt.js dice: duracion + 4 mins');
+                    cx.info('yt.js dice: duracion de +4 mins');
                     message.react('❌');
                 }
             });

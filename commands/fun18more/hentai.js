@@ -1,6 +1,7 @@
 const akaneko = require('akaneko');
 const { MessageMedia } = require('whatsapp-web.js');
 const sofi = require('../../client');
+const cx = require("consola");
 
 async function hentai(message) {
     try {
@@ -15,13 +16,13 @@ async function hentai(message) {
 
                 sofi.sendMessage(message.from, media, { caption: `🫥> hentai` });
             } catch (error) {
-                console.log('❌ debe ser el link de hentai');
+                cx.warn('❌ debe ser el link de hentai');
                 message.react('✖️');
             }
         }
         
     } catch (error) {
-        console.log('hubo un error en hentai.js');
+        cx.error('hubo un error en hentai.js');
     }
 };
 

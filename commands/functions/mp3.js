@@ -3,6 +3,8 @@ const fs = require('fs');
 const { MessageMedia } = require('whatsapp-web.js');
 const sofi = require('../../client');
 
+const cx = require("consola");
+
 async function mp3(message) {
 
     const chat = await message.getChat()
@@ -21,7 +23,7 @@ async function mp3(message) {
 
             const videoURL = words.slice(1).join(' ');
 
-            console.log(`Buscar en YouTube para convertir: ${videoURL} \n`);
+            cx.start(`Buscar en YouTube para convertir: ${videoURL} \n`);
 
             ytdl.getInfo(videoURL).then(info => {
                 // Obtiene el título del video
@@ -46,7 +48,7 @@ async function mp3(message) {
                     audioStream.pipe(outputStream);
 
                     outputStream.on('finish', async () => {
-                        console.log(`El audio ${outputFilePath} se ha guardado correctamente, procediendo a enviar.\n`);
+                        cx.success(`El audio ${outputFilePath} se ha guardado correctamente, procediendo a enviar.\n`);
                         const file = outputFilePath
                         const videoBuffer = fs.readFileSync(file, { encoding: 'base64' });
                         const media = new MessageMedia('audio/mp3', videoBuffer, `${resultado}.mp3`);
@@ -54,7 +56,7 @@ async function mp3(message) {
                         await fs.unlinkSync(outputFilePath)
                     });
                 } else {
-                    console.log('mp3 dice: duracion + 4 mins');
+                    cx.info('mp3 dice: duracion + 4 mins');
                     message.react('❌');
                 }
             });

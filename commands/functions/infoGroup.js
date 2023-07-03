@@ -6,12 +6,12 @@ async function infoGroup(message) {
         let chat = await message.getChat();
 
         if (chat.isGroup) {
-            message.reply(`*Detalles del grupo*
-Nombre del grupo: ${chat.name}
-Descripcion: ${chat.description}
-Creado el: ${chat.createdAt.toString()}
-Creado por: ${chat.owner.user}
-Numero de participantes: ${chat.participants.length}`);
+            message.reply(`🪷*Detalles del grupo*🪷
+🪷> Nombre del grupo: ${chat.name}
+🪷> Descripcion: ${chat.description}
+🪷> Creado el: ${chat.createdAt.toString()}
+🪷> Creado por: wa.me/+${chat.owner.user}
+🪷> Numero de participantes: ${chat.participants.length}`);
 
         } else {
 

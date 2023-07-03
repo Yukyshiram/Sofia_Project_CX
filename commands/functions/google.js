@@ -2,6 +2,7 @@ const { MessageMedia } = require('whatsapp-web.js');
 const sofi = require('../../client');
 const puppeteer = require('puppeteer');
 const fs = require('fs');
+const cx = require("consola");
 
 async function glg(message) {
 
@@ -25,7 +26,7 @@ async function glg(message) {
 
             const busqueda = words.slice(1).join(' ');
 
-            console.log(`Buscando: ${busqueda} \n`);
+            cx.start(`Buscando: ${busqueda} \n`);
 
             async function searchOnGoogle() {
                 const browser = await puppeteer.launch({
@@ -53,7 +54,7 @@ async function glg(message) {
 
                 await page.screenshot({ path: ubicacioncom });
 
-                await console.log('Listo, enviando 🪷');
+                await cx.success('Listo, enviando 🪷');
 
                 await browser.close();
             }
@@ -67,7 +68,6 @@ async function glg(message) {
             await fs.unlinkSync(ubicacioncom)
 
         } else {
-
             message.reply('Este comando requiere al menos algo despues de *glg*');
         }
     }

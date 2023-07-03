@@ -1,4 +1,5 @@
 const sofi = require("../../client");
+const cx = require("consola");
 
 async function everyone(message) {
 
@@ -29,8 +30,8 @@ async function everyone(message) {
             }
         }
     } catch (error) {
-        console.log('Hay un error en everyone.js');
-        console.log(error);
+        cx.warn('Hay un error en everyone.js');
+        cx.error(error);
     }
 
 }
