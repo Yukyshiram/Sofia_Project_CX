@@ -9,7 +9,7 @@ async function menu(message) {
     const media = MessageMedia.fromFilePath('./img/morada.jpg');
 
     try {
-        if (lowercase === '.menu' || lowercase === '.menú') {
+        if (lowercase === 'menu' || lowercase === 'menú') {
 
             sofi.sendMessage(message.from, media, {
                 caption: `*🪷Menu🪷*
