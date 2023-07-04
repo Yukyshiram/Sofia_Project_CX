@@ -52,10 +52,12 @@ Este es un menu super facil de usar
 | 🪷> sofi + texto 
 | (esto es para usar a Dall-e)
 | 🪷> eris + texto
+|
+| > Mas comandos next time...
 🪷---------------->> 
                 
 Dall-e: generador de imagenes
-*bigmenu* para ver uso de los comandos
+*bigmenu* para ver uso de algunos de los comandos
                 `
             })
         }
