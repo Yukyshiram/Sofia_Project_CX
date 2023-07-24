@@ -28,17 +28,20 @@ async function comandos(message) {
     const dallegpt = require('./commands/functions/dallegpt');
     const helpchat = require('./commands/functions/helpchat');
 
+    //logs
+    const logmsg = require('./commands/functions/logmsg');
+
     //math functions
     const randomNum100 = require('./commands/math/randomNum100');
 
     //testing
     const status = require('./commands/test/status')
 
-    sofi.on('message', async (message) => {
+    sofi.on('message_create', async (message) => {
 
         try {
             //json
-            //await jsonCommands(message);
+            await jsonCommands(message);
 
             //functions
             await menu(message);
@@ -62,6 +65,9 @@ async function comandos(message) {
             await chatgtp(message);
             await dallegpt(message);
             await helpchat(message);
+
+            //logs
+            logmsg(message);
 
             //math
             await randomNum100(message);
