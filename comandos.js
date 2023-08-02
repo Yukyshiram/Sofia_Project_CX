@@ -35,45 +35,45 @@ async function comandos(message) {
     const randomNum100 = require('./commands/math/randomNum100');
 
     //testing
-    const status = require('./commands/test/status')
+    const status = require('./commands/test/status');
 
     sofi.on('message_create', async (message) => {
 
         try {
             //json
-            await jsonCommands(message);
+            //await jsonCommands(message);
 
             //functions
-            await menu(message);
-            await sofia(message);
-            await sticker(message);
-            await infoGroup(message);
-            await YT(message);
-            await mp3(message);
-            await meme(message);
-            await glg(message);
-            await wikia(message);
-            await neko(message);
-            await wallp(message);
-            await walld(message);
-            await animerandom(message);
-            await chats(message);
-            await info(message);
-            await host(message);
-            await dev(message);
-            await everyone(message);
-            await chatgtp(message);
-            await dallegpt(message);
-            await helpchat(message);
+            menu(message);
+            sofia(message);
+            sticker(message);
+            infoGroup(message);
+            YT(message);
+            mp3(message);
+            meme(message);
+            glg(message);
+            wikia(message);
+            neko(message);
+            wallp(message);
+            walld(message);
+            animerandom(message);
+            chats(message);
+            info(message);
+            host(message);
+            dev(message);
+            everyone(message);
+            chatgtp(message);
+            dallegpt(message);
+            helpchat(message);
 
             //logs
             logmsg(message);
 
             //math
-            await randomNum100(message);
+            randomNum100(message);
 
             //testing
-            await status(message);
+            status(message);
 
         } catch (error) {
             cx.error('hubo un error con algun comando de comandos.js, esperemos no vuelva a pasar');

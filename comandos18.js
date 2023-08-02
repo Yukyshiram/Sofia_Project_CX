@@ -20,19 +20,19 @@ async function comandos18(message) {
     try {
         sofi.on('message', async (message) => {
 
-            await menu18(message);
-            await ass(message);
-            await bdsm(message);
-            await cum(message);
-            await doujin(message);
-            await foxgirl(message);
-            await glasses(message);
-            await hentai(message);
-            await masturbation(message);
-            await maid(message);
-            await pussy(message);
-            await succubus(message);
-            await tentacles(message);
+            menu18(message);
+            ass(message);
+            bdsm(message);
+            cum(message);
+            doujin(message);
+            foxgirl(message);
+            glasses(message);
+            hentai(message);
+            masturbation(message);
+            maid(message);
+            pussy(message);
+            succubus(message);
+            tentacles(message);
 
         })
     } catch (error) {
