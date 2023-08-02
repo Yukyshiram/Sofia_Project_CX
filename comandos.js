@@ -41,7 +41,7 @@ async function comandos(message) {
 
         try {
             //json
-            //await jsonCommands(message);
+            jsonCommands(message);
 
             //functions
             menu(message);
