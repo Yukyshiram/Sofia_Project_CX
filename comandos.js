@@ -13,7 +13,6 @@ async function comandos(message) {
     const YT = require('./commands/functions/yt');
     const mp3 = require('./commands/functions/mp3');
     const meme = require('./commands/functions/meme');
-    const glg = require('./commands/functions/google');
     const wikia = require('./commands/functions/wiki');
     const neko = require('./commands/functions/neko');
     const wallp = require('./commands/functions/wallphone');
@@ -51,7 +50,6 @@ async function comandos(message) {
             YT(message);
             mp3(message);
             meme(message);
-            glg(message);
             wikia(message);
             neko(message);
             wallp(message);

@@ -68,58 +68,6 @@ sofi.on('change_state', state => {
     cx.info(red('Estatus de la conexion', state));
 });
 
-sofi.on('group_join', (notification) => {
-    //const number = notification.recipientIds.replace("@c.us", "")
-    const user = notification.recipientIds.splice(0, 5)
-    //console.log(user)
-    console.log(`\nEl usuario *${user}* a entrado\n`)
-
-    notification.reply(`El usuario @${user} a entrado`)
-});
-
-sofi.on('group_leave', (notification) => {
-    //const number = notification.recipientIds.replace("@c.us", "")
-    const user = notification.recipientIds.splice(0, 5)
-    //console.log(user)
-    console.log(`\nEl usuario *${user}* a salido\n`)
-
-    notification.reply(`El usuario @${user} a salido`)
-});
-
-sofi.on('group_update', async (notification) => {
-    const type = notification.type.toLowerCase();
-    const author = notification.author;
-
-    if (type === 'subject') {
-        
-        console.log(`\n[whatsapp-web.js] Group Update: ${author} Changed Group Title To ${notification.body}\n`);
-        
-        // Verificamos si se encontró el autor de la notificación
-        if (author) {
-            const replyText = `Nuevo titulo *${notification.body}* by @${author}`;
-            await notification.reply(replyText);
-
-        } else {
-            console.log('No se encontró el autor de la notificación.');
-        }
-    } else if (type === 'picture') {
-        
-        console.log(`\n[whatsapp-web.js] Group Update: ${author} Changed Group Photo Profile.\n`);
-        
-        // Verificamos si se encontró el autor de la notificación
-        if (author) {
-            const replyText = `Actualizacion de grupo: @${author} cambio la foto de perfil.`;
-            await notification.reply(replyText);
-        } else {
-            console.log('No se encontró el autor de la notificación.');
-        }
-    } else {
-        const text = notification.body;
-        //console.log(notification);
-        notification.reply(`Nueva descripcion:\n*${text}*`);
-    }
-});
-
 sofi.on('disconnected', (reason) => {
     cx.warn('El cliente fue desconectado', reason);
 });
