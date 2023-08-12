@@ -88,7 +88,7 @@ sofi.on('group_leave', (notification) => {
 
 sofi.on('group_update', async (notification) => {
     const type = notification.type.toLowerCase();
-    const author = notification.author.replace('@c.us', '');
+    const author = notification.author;
 
     if (type === 'subject') {
         
