@@ -7,7 +7,7 @@ const comandos = require('./comandos');
 const comandos18 = require('./comandos18');
 const consol = require('./log/log');
 const status = require('./commands/presencia/statusinicio');
-const ping = require('./ping/pong');
+//const ping = require('./ping/pong');
 
 //estilos de texto en consola
 const red = chalk.bold.red;
@@ -39,7 +39,7 @@ const send_message = [
 
 //Ejecutar cliente
 sofi.on("ready", async () => {
-    ping();
+    //ping(); Temporalmente suspendido
 
     status();
 
