@@ -1,32 +1,35 @@
-const randomChar = require('anime-character-random');
 const { MessageMedia } = require('whatsapp-web.js');
-const sofi = require('../../client');
 const cx = require("consola");
+const axios = require('axios');
+const sofi = require('../../client');
 
 async function animerandom(message) {
     try {
         let lowercase = message.body.toLowerCase();
 
         if (lowercase === 'randomanime') {
-            try {
-                const haber = await randomChar.GetChar();
 
-                const animename = haber.AnimeName;
-                const name = haber.CharacterName;
-                const animeimg = haber.CharacterImage;
-                const japaname = haber.CharacterJapaneseName;
+            try {
+                const declaracion = `http://n7.boxmineworld.com:3002/animerandom?apikey=SKL`;
+                const response = await axios.get(declaracion);
+
+                const data = response.data;
+
+                let animename = data.AnimeRandom.AnimeName;
+                let nameC = data.AnimeRandom.CharacterName;
+                let animeimg = data.AnimeRandom.CharacterImage;
+                let japaname = data.AnimeRandom.CharacterJapaneseName;
 
                 const media = await MessageMedia.fromUrl(animeimg);
 
-                sofi.sendMessage(message.from, media, { caption: `🪷*Personaje Random*🪷\n\n🪷*Anime*🪷\n${animename}\n\n🪷*Personaje*🪷\n${name}\n\n🪷*Jap*🪷\n${japaname}` });
+                await sofi.sendMessage(message.from, media, { caption: `🪷*Personaje Random*🪷\n\n🪷*Anime*🪷\n${animename}\n\n🪷*Personaje*🪷\n${nameC}\n\n🪷*Jap*🪷\n${japaname}` });
+
             } catch (error) {
-                cx.warn('❌ debe ser el link de animerandom')
-                message.react('✖️');
+                cx.error('Error en la solicitud de animerandom: ', error);
             }
         }
-
     } catch (error) {
-        cx.error('hubo un error en animerandom.js');
+        cx.error('Hubo un error en animerandom.js');
     }
 };
 

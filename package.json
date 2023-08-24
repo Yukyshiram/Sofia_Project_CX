@@ -1,6 +1,6 @@
 {
   "name": "Sofia_Project",
-  "version": "1.4.4",
+  "version": "1.4.6",
   "description": "Valio la pena, al fin donde aplicar los conocimientos, no olvides dar creditos",
   "main": "index.js",
   "scripts": {
@@ -14,7 +14,9 @@
     "whatsapp-web.js",
     "puppeteer.js",
     "beta",
-    "bot"
+    "bot",
+    "SKL",
+    "CX"
   ],
   "author": "Sr. Courtesy",
   "homepage": "https://jesscx.boxmineworld.com/",
@@ -22,7 +24,7 @@
   "license": "ISC",
   "dependencies": {
     "akaneko": "^5.2.8",
-    "anime-character-random": "^1.0.14",
+    "axios": "^1.4.0",
     "chalk": "^4.1.2",
     "consola": "^3.2.3",
     "ffmpeg": "^0.0.4",

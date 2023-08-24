@@ -27,9 +27,10 @@ sofi.on('authenticated', (session) => {
 
 //si no esta iniciado, crea un qr
 sofi.on("qr", qr => {
-    console.log('Código QR:', qr)
+    console.log('------------ SKL Project ------------');
+    //console.log('Código QR:', qr);
     qrcode.generate(qr, { small: true });
-    console.log('------------ CX Project ------------')
+    console.log('------------ CX Project ------------');
 });
 
 //si esta activo, enviar mensaje a los siguientes numeros
