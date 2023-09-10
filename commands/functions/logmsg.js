@@ -47,7 +47,7 @@ async function logmsg(message) {
 
         } else {
             //mensajes que no estan registrados
-            consola.warn('Estos son mensajes no declarados o invalidos\n')
+            cx.warn('Estos son mensajes no declarados o invalidos\n')
         }
     } catch (error) {
         cx.error('Hay un error en logmsg.js');
