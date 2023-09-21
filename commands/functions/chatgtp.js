@@ -1,5 +1,5 @@
-const { Configuration, OpenAIApi } = require("openai");
 const cx = require("consola");
+const axios = require('axios');
 
 async function chatgtp(message) {
     let lowercase = message.body.toLowerCase();
@@ -11,31 +11,20 @@ async function chatgtp(message) {
                 const peticion = words.slice(1).join(' ');
                 cx.start(`Usuario a gtp: ${peticion}`);
 
-                const configuration = new Configuration({
-                    apiKey: "",//aqui debo de ser muy claro,si la api esta al limite aunque sea nueva soltara un error muy largo en consola, yo recomiendo crear una nueva cuenta y luego poner la api
-                });
+                const declaracion = `https://api_skl.boxmine.xyz/openai?text=${peticion}&apikey=SKL`;
+                const response = await axios.get(declaracion);
 
-                const openai = new OpenAIApi(configuration);
+                const data = response.data;
+                const busqueda = data.Openai.TextFromUser;
+                const resultado = data.Openai.TextFromOpenai;
 
-                async function runCompletion() {
-                    const completion = await openai.createCompletion({
-                        model: "text-davinci-003",
-                        prompt: `${peticion}`,
-                        max_tokens: 500
-                    });
+                await message.reply(`🪷 *Resultado* 🪷 \n` + busqueda + resultado);
+                message.react('🪷');
+                cx.success('Enviado correctamente :3');
 
-                    await completion.data.choices.forEach(choice => {
-                        //console.log(choice.text);
-                        message.reply(`🪷*Resultado*🪷`+choice.text);
-                        message.react('🪷');
-                        cx.success('Enviado correctamente :3');
-                    });
-                }
-
-                runCompletion();
             } catch (error) {
                 cx.error('hubo un error en chatgtp.js');
-            } 
+            }
         } else {
             cx.info('Requiere un texto despues de Sofi, ejemplo sofi como puedo crear una cuenta google?');
             message.reply('🪷Requiere un texto despues de Sofi, ejemplo sofi como puedo crear una cuenta google?')
