@@ -35,6 +35,9 @@ async function comandos(message) {
 
     //testing
     const status = require('./commands/test/status');
+    const hola = require('./commands/test/hola');
+    const adios = require('./commands/test/adios');
+    const gracias = require('./commands/test/gracias');
 
     sofi.on('message_create', async (message) => {
 
@@ -72,6 +75,9 @@ async function comandos(message) {
 
             //testing
             status(message);
+            hola(message);
+            adios(message);
+            gracias(message);
 
         } catch (error) {
             cx.error('hubo un error con algun comando de comandos.js, esperemos no vuelva a pasar');

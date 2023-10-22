@@ -10,7 +10,7 @@ async function animerandom(message) {
         if (lowercase === 'randomanime') {
 
             try {
-                const declaracion = `http://n7.boxmineworld.com:3002/animerandom?apikey=SKL`;
+                const declaracion = `https://api_skl.boxmine.xyz/animerandom?apikey=CX`;
                 const response = await axios.get(declaracion);
 
                 const data = response.data;

@@ -13,7 +13,7 @@ const sofi = new Client({
             '--disable-accelerated-2d-canvas',
             '--no-first-run',
             '--no-zygote',
-            '--single-process', // <- this one doesn't works in Windows
+            '--single-process',
             '--disable-gpu',
             '--disable-voice-input',
             '--no-default-browser-check',
