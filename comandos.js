@@ -2,9 +2,6 @@ const sofi = require('./client');
 const cx = require("consola");
 
 async function comandos(message) {
-    //json
-    const jsonCommands = require('./commands/json/jsonCommands');
-
     //functions
     const menu = require('./commands/functions/menu');
     const sofia = require('./commands/functions/sofia');
@@ -42,9 +39,6 @@ async function comandos(message) {
     sofi.on('message_create', async (message) => {
 
         try {
-            //json
-            jsonCommands(message);
-
             //functions
             menu(message);
             sofia(message);
