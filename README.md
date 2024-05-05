@@ -1,4 +1,8 @@
-# Sofía Project Bot Beta
+# Sofía Project Bot (outdated)
+
+Me gusto el proyecto del bot pero tengo que continuar con otros proyectos, asi que ya no le puedo dar mantenimiento, es posible que saque otra versión.
+
+---
 Este es un bot propio, aclaro que no use bases de otros bots, lo puedes modificar si gustas, ojito no te olvides de dar creditos, si tienes ideas me puedes mandar mensaje por discord: yukyshiram_cx
 
 - La libreria tiende a soltar ciertos errores, asi que trate de optimizar todo esto al maximo aunque aun faltan varios detalles
